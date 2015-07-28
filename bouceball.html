@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <title>Try coding!</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <style>
+        .ball{
+            border-radius:100%;
+            background:green;
+            position:relative;
+            width:100px;
+            height:100px;
+            left:500px;
+            top:400px;
+        }
+        body{
+            background-image: url("http://ma-gh.com/wp-content/uploads/Selva-fine-art-cartoon-forest-1280x800.jpg");
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div class="ball">
+        <img src="http://multidoge.org/images/MultiDoge.png" alt="doge" class="img-responsive">
+    </div>
+    <script>
+        ball = $(".ball");
+        ball.moveRight = function(){
+            var css = ball.css("left");
+            var pos = parseInt(css.substring(0,css.length-2));
+            if (pos < 901 ) {
+                var out = (pos+100)+"px";
+                ball.animate({left: out});
+                return "Success!";
+            }
+            return "Can't go there.";
+        }
+        ball.moveLeft = function(){
+            var css = ball.css("left");
+            var pos = parseInt(css.substring(0,css.length-2));
+            if (pos > 0 ) {
+                var out = (pos-100)+"px";
+                ball.animate({left: out});
+                return "Success!";
+            }
+            return "Can't go there.";
+        }
+        ball.moveUp = function(){
+            var css = ball.css("top");
+            var pos = parseInt(css.substring(0,css.length-2));
+            if (pos > 0 ) {
+                var out = (pos-100)+"px";
+                ball.animate({top: out});
+                return "Success!";            }
+            return "Can't go there.";
+        }
+        ball.moveDown = function(){
+            var css = ball.css("top");
+            var pos = parseInt(css.substring(0,css.length-2));
+            if (pos < 501 ) {
+                var out = (pos+100)+"px";
+                ball.animate({top: out});
+                return "Success!";
+            }
+            return "Can't go there.";
+        }
+        dog = ball;
+    </script>
+</body>
+</html>
