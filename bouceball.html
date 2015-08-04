@@ -8,63 +8,90 @@
             border-radius:100%;
             background:green;
             position:relative;
-            width:100px;
-            height:100px;
-            left:500px;
-            top:400px;
+            width:120px;
+            height:120px;
+            left:400px;
+            top:350px;
+        }
+        .mickey{
+            background:white;
+            left:100px;
+            top: 110px;
+        }
+        .mario{
+            background:blue;
+            left:250px;
+            top:230px;
         }
         body{
-            background-image: url("http://ma-gh.com/wp-content/uploads/Selva-fine-art-cartoon-forest-1280x800.jpg");
+            background-image: url("wallpaper-hd.jpg");
         }
     </style>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
-    <div class="ball">
+    <div class="ball" id="doge">
         <img src="http://multidoge.org/images/MultiDoge.png" alt="doge" class="img-responsive">
     </div>
+    <div class="ball mario" id="mario">
+        <img src="mario.png" alt="mario" class="img-responsive">
+    </div>
+    <div class="ball mickey" id="mickey">
+        <img src="mickey.png" alt="mickey" class="img-responsive">
+    </div>
     <script>
-        ball = $(".ball");
+        ball = $("#doge");
         ball.moveRight = function(){
-            var css = ball.css("left");
+            var css = this.css("left");
             var pos = parseInt(css.substring(0,css.length-2));
             if (pos < 901 ) {
                 var out = (pos+100)+"px";
-                ball.animate({left: out});
-                return "Success!";
+                this.animate({left: out});
+                return this;
             }
-            return "Can't go there.";
+            return this;
         }
         ball.moveLeft = function(){
-            var css = ball.css("left");
+            var css = this.css("left");
             var pos = parseInt(css.substring(0,css.length-2));
             if (pos > 0 ) {
                 var out = (pos-100)+"px";
-                ball.animate({left: out});
-                return "Success!";
+                this.animate({left: out});
+                return this;
             }
-            return "Can't go there.";
+            return this;
         }
         ball.moveUp = function(){
-            var css = ball.css("top");
+            var css = this.css("top");
             var pos = parseInt(css.substring(0,css.length-2));
             if (pos > 0 ) {
                 var out = (pos-100)+"px";
-                ball.animate({top: out});
-                return "Success!";            }
-            return "Can't go there.";
+                this.animate({top: out});
+                return this;            }
+            return this;
         }
         ball.moveDown = function(){
-            var css = ball.css("top");
+            var css = this.css("top");
             var pos = parseInt(css.substring(0,css.length-2));
             if (pos < 501 ) {
                 var out = (pos+100)+"px";
-                ball.animate({top: out});
-                return "Success!";
+                this.animate({top: out});
+                return this;
             }
-            return "Can't go there.";
+            return this;
         }
         dog = ball;
+        mario = $("#mario");
+        mario.moveRight = ball.moveRight;
+        mario.moveLeft = ball.moveLeft;
+        mario.moveUp = ball.moveUp;
+        mario.moveDown = ball.moveDown;
+        mickey = $("#mickey");
+        mickey.moveRight = ball.moveRight;
+        mickey.moveLeft = ball.moveLeft;
+        mickey.moveUp = ball.moveUp;
+        mickey.moveDown = ball.moveDown;
     </script>
 </body>
 </html>
