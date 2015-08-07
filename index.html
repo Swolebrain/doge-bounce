@@ -4,6 +4,19 @@
     <title>Try coding!</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
     <style>
+        *{
+            font-family: sans-serif;
+        }
+        .floater{
+            position:absolute;
+            right:3px;
+            top:0px;
+            background-color:rgba(220,220,220,0.5);
+            padding: 20px;
+            width:35%;
+            border-radius:25px;
+            border: 2px solid white;
+        }
         .ball{
             border-radius:100%;
             background:green;
@@ -39,6 +52,33 @@
     </div>
     <div class="ball mickey" id="mickey">
         <img src="mickey.png" alt="mickey" class="img-responsive">
+    </div>
+    <div class="floater">
+        <center><h2>Step into Coding</h2></center>
+        <p>
+            Go on, try your hand at some code. You can tell 
+            the dog, mario or mickey to move or do anything you
+            want them to do. Make sure you opened this page in
+            Chrome, hit F12 to open up Developer Tools, and try
+            some of these commands in the <strong>console</strong>:
+        <ol>
+            <li><strong>dog.moveUp();</strong> (or Right, or Left, or Down)</li>
+            <li><strong>mickey.toggle("explode");</strong> - do it again to make him reappear</li>
+            <li><strong>mickey.toggle("bounce", {times: 5}, "slow");</strong> - do it again to make him reappear</li>
+            <li>Now try chaining them together like so:
+            <strong>mario.toggle("explode").toggle("explode").
+            .effect("fade").toggle("clip");</strong> </li>
+        </ol>
+        </p>
+        <p>
+            Now that you're a programmer, we'll move on to greater things. First, we'll go to FVI's website
+            and change the pictures to round. Go to fvi.edu, find a rectangular picture and right click it.
+            Click on <em>inspect element</em>, and change the "border-radius" to 100%.
+        </p>
+        <p>
+            Now we'll go to Microsoft's website and rearrange their pictures as well. See if you can figure out how!
+            Hint: you will need to change the <em>src</em> of each <em>&lt;img&gt;</em> element.
+        </p>
     </div>
     <script>
         ball = $("#doge");
